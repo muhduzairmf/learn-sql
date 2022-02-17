@@ -82,3 +82,31 @@ SET major = 'undecided';
 -- @block 
 DELETE FROM student
 WHERE id = 5;
+
+-- @block 
+SELECT name from student;
+
+-- @block 
+SELECT student.name, student.major from student;
+
+-- @block 
+SELECT student.name, student.major from student
+ORDER BY student.name;
+
+-- @block 
+SELECT * FROM student
+LIMIT 2;
+
+-- @block 
+SELECT * FROM student
+WHERE id = 1;
+
+-- @block 
+SELECT * FROM student
+WHERE major = 'Biology' OR major = 'Medical';
+
+-- @block 
+SELECT name, email, major FROM student
+WHERE major <> 'Economy'
+ORDER BY name ASC
+LIMIT 2;

@@ -253,4 +253,110 @@ This will delete where the id = 5
 ```SQL
     DELETE FROM student
     WHERE id = 5;
-```  
+```      
+
+## Basic Queries 📊
+
+The table     
+| id | name | email | major |
+| -- | ---- | ----- | ----- |
+| 1 | Tom | tom@email.com | Medical |
+| 2 | Kate | kate@email.com | Economy |
+| 3 | Ben | ben@email.com | Computer Science | 
+| 4 | Sara | sara@email.com | Architecture | 
+| 5 | Ray | ray@email.com | Biology |     
+
+### Include all columns
+
+To get all information/columns of rows/data from student table    
+```SQL
+    SELECT * FROM student;
+```      
+
+### Include specific column
+
+To get only name column from student database       
+```SQL
+    SELECT name FROM student;
+```        
+
+or      
+```SQL
+    SELECT student.name FROM student;
+```
+
+The output      
+| name |
+| ---- |
+| Tom |
+| Kate |
+| Ben | 
+| Sara | 
+| Ray |       
+
+To get name and major column for student table       
+```SQL
+    SELECT name, major FROM student;
+```
+
+or
+```SQL
+    SELECT student.name, student.major FROM student;
+```     
+
+### Order the data based on the column
+
+To get name and major column for student table that ordered by name in ascending order     
+```SQL
+    SELECT student.name, student.major from student
+    ORDER BY student.name;
+```        
+
+or
+```SQL
+    SELECT student.name, student.major from student
+    ORDER BY student.name ASC;
+```
+
+To get name and major column for student table that ordered by name in descending order      
+```SQL
+    SELECT student.name, student.major from student
+    ORDER BY student.name DESC;
+```       
+
+### Limit the incoming data
+
+To get all information/columns of rows/data from student table, but want only two rows/data    
+```SQL
+    SELECT * FROM student
+    LIMIT 2;
+```      
+
+### Use where condition
+
+To get all columns of student table where id = 1      
+```SQL
+    SELECT * FROM student
+    WHERE id = 1;
+```      
+
+To get all columns of student table where the major = Biology or major = Medical     
+```SQL
+    SELECT * FROM student
+    WHERE major = 'Biology' OR major = 'Medical';
+```       
+
+### Make a complex query
+
+```SQL
+    SELECT name, email, major FROM student
+    WHERE major <> 'Economy'
+    ORDER BY name ASC
+    LIMIT 2;
+```       
+
+The `IN` keyword will include all the values in the parenthesis     
+```SQL
+    SELECT * FROM student;
+    WHERE name IN ('Kate', 'Sara', 'Ray');
+```
